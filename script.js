@@ -1,15 +1,30 @@
-var frase = {
-    who: ['the dog','my granma','his turtle','my bird'],
-    what: [ 'ate','pissed','crashed','broked'],
-    object: ['my homework','my car','my sandwich','my computer'],
-    when: [ 'before the class','this morning','when I finished it','during my lunch','while I was praying']
-    };
 
-function random(max){
-    var num = Math.floor(Math.random()*max);
-    return num;
+let pronoun= ['the','our'];
+let adj= [ 'ate','pissed'];
+let noun= ['jogger','racoon'];
+
+var dominian =[];
+var cont=0;
+var nombre1 ="";
+var nombre2 ="";
+var nombre3 ="";
+
+for(i=0;i<pronoun.length;i++){
+    nombre1 = pronoun[i];
+    for(j=0;j<adj.length;j++){
+        nombre2 = adj[j];
+        for(k=0;k<noun.length;k++){
+            nombre3 = noun[k];
+            dominian[cont]= nombre1+nombre2+nombre3+".com"
+            cont++;
+            nombre3="";
+        }
+        nombre2="";
+    }
+    nombre1="";
 }
 
-window.onload=function (){
-document.querySelector('#excuse').innerHTML= frase.who[random(frase.who.length)]+" "+ frase.what[random(frase.what.length)]+" "+frase.object[random(frase.object.length)]+" "+frase.when[random(frase.when.length)];
+for(i=0;i<dominian.length;i++){
+    document.write(dominian[i]+"<br>");
 }
+
